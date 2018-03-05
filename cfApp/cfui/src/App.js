@@ -11,21 +11,26 @@ class App extends Component {
         super(props)
         this.state = {
             name: '',
-            amt: ''
+            amt: '',
+            addr: String(pfContract.address)
             
         }
     }
+    handleClick() {
+      alert('hi');
+
+
+    }
+
 
     componentWillMount() {
         var namee = pfContract.getName.call();
         var amtt = pfContract.getTotalAmt.call();
-        var met = pfContract.address;
         //Object.getOwnPropertyNames(pfContract);
 
         this.setState( {
             name: String(namee),
             amt: String(amtt),
-            mett: String(met)
             
         });
     }
@@ -38,9 +43,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to {this.state.name}</h1>
         </header>
-            <h3> Total Raised: ${this.state.amt} </h3>
+            <h3> Total Raised: Ξ {this.state.amt} </h3>
             <br></br>
-            <h3> Methods: ${this.state.mett} </h3>
+            <h3> Address to Back this Project: {this.state.addr} </h3>
       </div>
     );
   }
