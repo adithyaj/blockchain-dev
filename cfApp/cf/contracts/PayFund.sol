@@ -5,13 +5,11 @@ contract PayFund {
 
     
     address owner;
-    uint totalAmt = 0;
+    ufixed totalAmt = 0;
     string name;
     mapping(address => uint) fundMap;
 
 
-    event newFund();
-    event fundingDone();
     function PayFund(string _name) {
 
         owner = msg.sender;
