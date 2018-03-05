@@ -29,8 +29,8 @@ contract PayFund {
     function withdraw() {
         require(msg.sender == owner);
         if (totalAmt > 0){
-            owner.transfer(totalAmt);
             totalAmt = 0;
+            owner.transfer(totalAmt);
             fundEnd();
         }
 
@@ -48,11 +48,7 @@ contract PayFund {
     function getTotalAmt() returns(uint) {
         return totalAmt;
     }
-
-    function incTest() {
-        totalAmt +=1;
-    }
-    
+ 
     function()  {
         revert();
     }
