@@ -5,13 +5,11 @@ contract PayFund {
 
     
     address owner;
-    uint totalAmt = 0;
+    uint256 totalAmt = 0;
     string name;
     mapping(address => uint) fundMap;
 
 
-    event newFund();
-    event fundingDone();
     function PayFund(string _name) {
 
         owner = msg.sender;
@@ -29,8 +27,8 @@ contract PayFund {
     function withdraw() {
         require(msg.sender == owner);
         if (totalAmt > 0){
-            owner.transfer(totalAmt);
             totalAmt = 0;
+            owner.transfer(totalAmt);
             fundEnd();
         }
 
@@ -48,11 +46,7 @@ contract PayFund {
     function getTotalAmt() returns(uint) {
         return totalAmt;
     }
-
-    function incTest() {
-        totalAmt +=1;
-    }
-    
+ 
     function()  {
         revert();
     }
