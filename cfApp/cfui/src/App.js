@@ -45,7 +45,7 @@ class App extends Component {
         </header>
             <h3> Total Raised: Ξ {this.state.amt} </h3>
             <br></br>
-            <h3> Address to Back this Project: {this.state.addr} </h3>
+            <h3> Address to Back this Project w/ sendFund: {this.state.addr} </h3>
       </div>
     );
   }

@@ -5,7 +5,7 @@ contract PayFund {
 
     
     address owner;
-    ufixed totalAmt = 0;
+    uint256 totalAmt = 0;
     string name;
     mapping(address => uint) fundMap;
 
